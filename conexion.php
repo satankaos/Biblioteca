@@ -1,5 +1,5 @@
 <?php
-function conexion($servername, $username, $password, $database)
+function conect($servername, $username, $password, $database)
 {
  
     // Create connection
@@ -62,5 +62,25 @@ if ($stmt->execute()) {
     return $txt;
 }
 
+ function borrarCarro($id_carrito,$servername, $username, $password, $database){
+
     
+
+    if (isset($id_carrito)) {
+        $conn = conexion($servername, $username, $password, $database);
+        
+        $borrar = "DELETE FROM carrito WHERE `carrito`.`Id_carrito` = $id_carrito";
+
+        $ejecutar = sqlsrv_query($conn, $borrar);
+        if ($ejecutar) {
+            return "<script>alert('Ha sido Borrado')</script>";
+        }
+    }
+
+
+
+
+
+
+ }   
 ?>

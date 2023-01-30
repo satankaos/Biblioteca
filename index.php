@@ -14,11 +14,23 @@ $servername = "localhost";
     $database = "libros_bd";
     $username = "admin";
     $password = "21232f297a57a5a743894a0e4a801fc3";
-conexion($servername, $username, $password, $database);
+conect($servername, $username, $password, $database);
+
 $nombreU= filter_var(trim($_POST["nombre"]), FILTER_SANITIZE_STRING);
+$contraseñaU= filter_var(trim($_POST["contraseña"]), FILTER_SANITIZE_STRING);
+$contraseñaUr= filter_var(trim($_POST["repetir"]), FILTER_SANITIZE_STRING);
+$usuarioU= filter_var(trim($_POST["correo"]), FILTER_SANITIZE_STRING);
 echo $nombreU;
-$Correo=$_POST['nombre'];
-$Contr=$_POST['nombre'];
+echo $contraseñaU;
+if ($contraseñaU==$contraseñaUr) {
+    
+} else {
+    echo "<p>Contraseñas DIF iguales</p>";
+}
+
+
+
+
 ?>
     </form>
 </body>
