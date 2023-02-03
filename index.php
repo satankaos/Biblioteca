@@ -14,24 +14,31 @@ $servername = "localhost";
     $database = "libros_bd";
     $username = "admin";
     $password = "21232f297a57a5a743894a0e4a801fc3";
-conect($servername, $username, $password, $database);
+$conn = conect($servername, $username, $password, $database);
 
-$nombreU= filter_var(trim($_POST["nombre"]), FILTER_SANITIZE_STRING);
+$Nombre= filter_var(trim($_POST["nombre"]), FILTER_SANITIZE_STRING);
 $contraseñaU= filter_var(trim($_POST["contraseña"]), FILTER_SANITIZE_STRING);
 $contraseñaUr= filter_var(trim($_POST["repetir"]), FILTER_SANITIZE_STRING);
-$usuarioU= filter_var(trim($_POST["correo"]), FILTER_SANITIZE_STRING);
-echo $nombreU;
-echo $contraseñaU;
+$Correo= filter_var(trim($_POST["correo"]), FILTER_SANITIZE_STRING);
+$id_libro = "";//vacio
 if ($contraseñaU==$contraseñaUr) {
-    
+    $Password= md5($contraseñaU);
 } else {
     echo "<p>Contraseñas DIF iguales</p>";
 }
 
+$res=insertarUsuario($conn, $Nombre, $Correo, $Password);
+/*esta el archivo en xamp
+
+*/
+echo $res;
+/* gestion inicio*/
 
 
+// Si se ha enviado el formulario
 
 ?>
     </form>
 </body>
 </html>
+

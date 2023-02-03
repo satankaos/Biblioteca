@@ -13,7 +13,7 @@ function insertarLibro( $conn,$Titulo, $Autor,$Editorial,$Fecha_publicacion, $Ge
 {
     $stmt = $conn->prepare("INSERT INTO `libros` (`Titulo`, `Autor`, `Editorial`, `Fecha_publicacion`, `Genero`, `Precio`, `Imagen`, `Descripción`) VALUES (,?, ?, ?, ?, ?, ?, ?,?)");
 
-$stmt->bind_param($Titulo, $Autor,$Editorial,$Fecha_publicacion, $Genero, $Precio, $Imagen, $Descripción);
+$stmt->bind_param("ssssssss",$Titulo, $Autor,$Editorial,$Fecha_publicacion, $Genero, $Precio, $Imagen, $Descripción);
 if ($stmt->execute()) {
 
     $txt= "Producto agregado al carrito";
@@ -29,12 +29,13 @@ if ($stmt->execute()) {
     
 }   
 
-function insertarUsuario($conn,$Nombre, $Correo, $Password, $id_libro){
-    $stmt = $conn->prepare(" INSERT INTO `usuario` (`Nombre`, `Correo`, `Password`) VALUES (?,?,?)");
-    $stmt->bind_param($Nombre, $Correo, $Password, $id_libro);
+function insertarUsuario($conn,$Nombre, $Correo, $Password){
+    
+    $stmt = $conn->prepare(" INSERT INTO `usuario` (`Id_admin`, `Id_usuario`, `Nombre`, `Correo`, `Password`, `id_libro`) VALUES (NULL, NULL, ?, ?, ?, NULL);");
+    $stmt->bind_param("sss",$Nombre, $Correo, $Password);
 if ($stmt->execute()) {
 
-    $txt= "Producto agregado al carrito";
+    $txt= "usuario agregado al bbdd";
     
     } else {
     
