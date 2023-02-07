@@ -18,11 +18,28 @@ if (isset($_POST['login_button'])) {
     $query = "SELECT * FROM `usuario` WHERE Correo='$username';";
     $results = mysqli_query($db, $query);
    
+
+
+ 
+    if($results==true){
+ 
+      header('Location:home.html');
+     
+    }else{
+     
+      echo '<script language="javascript">alert("El Usuario/Contraseña no es correcto,intente de nuevo");</script>';
+     
+    }
+
+
+
     if (mysqli_num_rows($results) == 1) {
       // Nombre de usuario válido, verificar contraseña
+  
       $row = mysqli_fetch_assoc($results);
       if (password_verify(md5($password), $row['contraseña'])) {
         // Inicio de sesión válido
+      
         $_SESSION['username'] = $username;
         header('Location: home.html');
       } else {
@@ -36,5 +53,3 @@ if (isset($_POST['login_button'])) {
   }
   session_destroy()
 ?>
-C:\xampp\htdocs\Biblioteca\loging.php 
-C:\xampp\htdocs\Biblioteca\home.html

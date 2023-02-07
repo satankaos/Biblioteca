@@ -25,7 +25,7 @@ session_destroy()
     <div class="d-flex min-vh-100">
       <div class="row d-flex flex-grow-1 justify-content-center align-items-center">
         <div class="col-md-4 form login-form">
-          <form action="procesoInicio.php" method="POST" autocomplete="off">
+          <form action="ProcesoInicio.php" method="POST" autocomplete="off">
             <h2 class="text-center">Inicio de sesión</h2>
               
               <?php
@@ -37,7 +37,7 @@ session_destroy()
                 echo "</div>";
               }
               ?>
-              
+          
               <div class="form-group mb-3">
                   <input type="text" name="usuario" class="form-control" placeholder="usuario" required>
               </div>
