@@ -9,7 +9,7 @@ include "php/conection.php";
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/source/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container">

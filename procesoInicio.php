@@ -24,9 +24,9 @@ if (empty($row)) {
    // $_SESSION['user_id'] = $rows['id'];
    // $_SESSION['user_name'] = $rows['Nombre'];
     if ($row['Id_admin']!= null) {
-      header('Location: homeAd.html');
+      header('Location: homeAd.php');
     } else {
-      header('Location: home.html');    }
+      header('Location: home.php');    }
     
     
 

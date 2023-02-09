@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>Carrito Basico PHP</title>
-	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/source/css/bootstrap.min.css">
 </head>
 <body>
 
