@@ -10,11 +10,8 @@
     <form action="#" method="post">
 <?php
 include("./conexion.php");
-$servername = "localhost";
-    $database = "libros_bd";
-    $username = "admin";
-    $password = "21232f297a57a5a743894a0e4a801fc3";
-$conn = conect($servername, $username, $password, $database);
+
+$conn = conect();
 
 $Nombre= filter_var(trim($_POST["nombre"]), FILTER_SANITIZE_STRING);
 $contraseñaU= filter_var(trim($_POST["contraseña"]), FILTER_SANITIZE_STRING);

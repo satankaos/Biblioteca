@@ -7,7 +7,7 @@
     <title>registro</title>
 </head>
 <body>
-    <form action="index.php" method="post">
+    <form action="Vregistro.php" method="post">
     <p>nombre <input type="text" name="nombre" required></p>
     <p>Usuario/Correo <input type="text" name="correo" required></p>
     <p>contraseña <input type="password" name="contraseña" required></p>

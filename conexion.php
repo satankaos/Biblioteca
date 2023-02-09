@@ -1,7 +1,10 @@
 <?php
-function conect($servername, $username, $password, $database)
+function conect()
 {
- 
+    $servername = "localhost";
+    $database = "libros_bd";
+    $username = "admin";
+    $password = "21232f297a57a5a743894a0e4a801fc3";
     // Create connection
     $conn = mysqli_connect($servername, $username, $password, $database) or die ("Connection failed: " . mysqli_connect_error());
     // Check connection

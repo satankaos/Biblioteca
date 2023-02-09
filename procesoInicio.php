@@ -1,55 +1,52 @@
 <?php
-include("C:/xampp/htdocs/Biblioteca/conexion.php");
+
 session_start();
+require("conexion.php");
 
-$servername = "localhost";
-    $database = "libros_bd";
-    $username = "admin";
-    $password = "21232f297a57a5a743894a0e4a801fc3";
 
- $db =conect($servername, $username, $password, $database);
+$db = conect();
 // Conexión a la base de datos
 
 if (isset($_POST['login_button'])) {
-    $username = mysqli_real_escape_string($db, $_POST['usuario']);
-    $password = mysqli_real_escape_string($db, $_POST['contraseña']);
-   
-    // Comprobar si el nombre de usuario es válido
-    $query = "SELECT * FROM `usuario` WHERE Correo='$username';";
-    $results = mysqli_query($db, $query);
-   
+  $user = mysqli_real_escape_string($db, $_POST['usuario']);
+  $password = mysqli_real_escape_string($db, md5($_POST['contraseña']));
+  // Comprobar si el nombre de usuario es válido
+  $sql="SELECT * FROM `usuario` WHERE Correo LIKE '".$user."'";
+ $result = $db->query($sql);
+if ($result) {
+$row=mysqli_fetch_assoc($result);
+if (empty($row)) {
+  echo 'row vacio';
 
-
- 
-    if($results==true){
- 
-      header('Location:home.html');
-     
-    }else{
-     
-      echo '<script language="javascript">alert("El Usuario/Contraseña no es correcto,intente de nuevo");</script>';
-     
-    }
-
-
-
-    if (mysqli_num_rows($results) == 1) {
-      // Nombre de usuario válido, verificar contraseña
-  
-      $row = mysqli_fetch_assoc($results);
-      if (password_verify(md5($password), $row['contraseña'])) {
-        // Inicio de sesión válido
-      
-        $_SESSION['username'] = $username;
-        header('Location: home.html');
-      } else {
-        // Contraseña inválida
-        $errors[] = "Nombre de usuario/contraseña inválidos";
-      }
+} else {
+  if ($row['Correo']==$user &&  $row['Password']==$password ) {
+    echo 'bie';
+   // $_SESSION['user_id'] = $rows['id'];
+   // $_SESSION['user_name'] = $rows['Nombre'];
+    if ($row['Id_admin']==0) {
+      echo 'eres admin';
     } else {
-      // Nombre de usuario inválido
-      $errors[] = "Nombre de usuario/contraseña inválidos";
-    }
+      echo 'no eres admin';    }
+    
+    echo'<br>';
+    echo $password;
+  } else {
+    echo 'ma';# code...
+    echo'<br>';
+    echo $row['Password'];
+    echo'<br>';
+    echo $password;
   }
-  session_destroy()
+  
+  
+}
+
+} else {
+echo 'mal';
+}
+
+  
+}
+session_destroy()
+//se accede con correo no con nombre 
 ?>
