@@ -28,14 +28,10 @@ if (empty($row)) {
     } else {
       header('Location: home.html');    }
     
-    echo'<br>';
-    echo $password;
+    
+
   } else {
-    echo 'ma';# code...
-    echo'<br>';
-    echo $row['Password'];
-    echo'<br>';
-    echo $password;
+    
   }
   
   
