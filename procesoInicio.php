@@ -23,10 +23,10 @@ if (empty($row)) {
     echo 'bie';
    // $_SESSION['user_id'] = $rows['id'];
    // $_SESSION['user_name'] = $rows['Nombre'];
-    if ($row['Id_admin']==0) {
-      echo 'eres admin';
+    if ($row['Id_admin']!= null) {
+      header('Location: homeAd.html');
     } else {
-      echo 'no eres admin';    }
+      header('Location: home.html');    }
     
     echo'<br>';
     echo $password;
