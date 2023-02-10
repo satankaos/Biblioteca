@@ -9,7 +9,7 @@
 <body>
     <form action="#" method="post">
 <?php
-include("./conexion.php");
+include("..\php\conexion.php");
 
 $conn = conect();
 

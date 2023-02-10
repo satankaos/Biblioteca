@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-require("conexion.php");
+include("..\php\conexion.php");
 
 
 $db = conect();
@@ -24,7 +24,7 @@ if (empty($row)) {
    // $_SESSION['user_id'] = $rows['id'];
    // $_SESSION['user_name'] = $rows['Nombre'];
     if ($row['Id_admin']!= null) {
-      header('Location: homeAd.php');
+      header('Location: panelad.php');
     } else {
       header('Location: home.php');    }
     

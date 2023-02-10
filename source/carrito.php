@@ -3,7 +3,7 @@
 * Este archio muestra los productos en una tabla.
 */
 session_start();
-include "php/conection.php";
+include("..\php\conexion.php");
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,7 +22,8 @@ include "php/conection.php";
 /*
 * Esta es la consula para obtener todos los productos de la base de datos.
 */
-$products = $con->query("select * from product");
+$db=conect();
+$products = $db->query("SELECT * FROM `carrito`");
 if(isset($_SESSION["cart"]) && !empty($_SESSION["cart"])):
 ?>
 <table class="table table-bordered">
@@ -38,13 +39,13 @@ if(isset($_SESSION["cart"]) && !empty($_SESSION["cart"])):
 * Apartir de aqui hacemos el recorrido de los productos obtenidos y los reflejamos en una tabla.
 */
 foreach($_SESSION["cart"] as $c):
-$products = $con->query("select * from product where id=$c[product_id]");
+$products = $db->query("select * from libros where id = $c[product_id]");
 $r = $products->fetch_object();
 	?>
 <tr>
 <th><?php echo $c["q"];?></th>
-	<td><?php echo $r->name;?></td>
-	<td>$ <?php echo $r->price; ?></td>
+	<td><?php echo $r->Nombre;?></td>
+	<td>$ <?php echo $r->precio; ?></td>
 	<td>$ <?php echo $c["q"]*$r->price; ?></td>
 	<td style="width:260px;">
 	<?php
@@ -57,7 +58,7 @@ $r = $products->fetch_object();
 <?php endforeach; ?>
 </table>
 
-<form class="form-horizontal" method="post" action="./php/procesarCarrito.php">
+<form class="form-horizontal" method="post" action="/">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Email del cliente</label>
     <div class="col-sm-5">

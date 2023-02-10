@@ -3,13 +3,13 @@
 * Este archio muestra los productos en una tabla.
 */
 session_start();
-include "php/conection.php";
+include("..\php\conexion.php");
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="/source/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../source/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container">
@@ -23,11 +23,17 @@ include "php/conection.php";
 /*
 * Esta es la consula para obtener todos los productos de la base de datos.
 */
-$products = $con->query("select * from product");
+$db=conect();
+$products = $db->query("SELECT * FROM libros");
 ?>
-<table class="table table-bordered">
+<table class="table table-dark table-striped">
 <thead>
-	<th>Producto</th>
+	
+	<th>Titulo</th>
+	<th>Autor</th>
+	<th>Editorial</th>
+	<th>Fecha_publicacion</th>
+	<th>Genero</th>
 	<th>Precio</th>
 	<th></th>
 </thead>
@@ -37,8 +43,12 @@ $products = $con->query("select * from product");
 */
 while($r=$products->fetch_object()):?>
 <tr>
-	<td><?php echo $r->name;?></td>
-	<td>$ <?php echo $r->price; ?></td>
+	<td><?php echo $r->Titulo;?></td>
+	<td> <?php echo $r->Autor; ?></td>
+	<td> <?php echo $r->Editorial; ?></td>
+	<td> <?php echo $r->Fecha_publicacion; ?></td>
+	<td> <?php echo $r->Genero; ?></td>
+	<td> <?php echo $r->Precio; ?></td>
 	<td style="width:260px;">
 	<?php
 	$found = false;
@@ -48,7 +58,7 @@ while($r=$products->fetch_object()):?>
 	<?php if($found):?>
 		<a href="carrito.php" class="btn btn-info">Agregado</a>
 	<?php else:?>
-	<form class="form-inline" method="post" action="./php/addCarrito.php">
+	<form class="form-inline" method="post" action="/phpc/addCarrito.php">
 	<input type="hidden" name="product_id" value="<?php echo $r->id; ?>">
 	  <div class="form-group">
 	    <input type="number" name="q" value="1" style="width:100px;" min="1" class="form-control" placeholder="Cantidad">

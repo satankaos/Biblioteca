@@ -1,5 +1,5 @@
 <?php
-include("C:/xampp/htdocs/Biblioteca/conexion.php");
+include("..\php\conexion.php");
 session_start();
 
 $servername = "localhost";
@@ -7,7 +7,7 @@ $servername = "localhost";
     $username = "admin";
     $password = "21232f297a57a5a743894a0e4a801fc3";
 
- $db =conect($servername, $username, $password, $database);
+ $db =conect();
 // Conexión a la base de datos
 
  
