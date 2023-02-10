@@ -34,7 +34,7 @@ if (!$conn) {
 }
 
 // Escribir la consulta SQL
-$sql = "SELECT * FROM usuario";
+$sql = "SELECT * FROM libros";
 
 // Ejecutar la consulta
 $result = mysqli_query($conn, $sql);
@@ -44,19 +44,38 @@ if (mysqli_num_rows($result) > 0) {
     // Mostrar los resultados en una tabla HTML
     echo "<table class= \"table table-dark table-striped\">";
     echo "<tr>";
-    echo "<th>id admin</th>";
-    echo "<th>id usuario</th>";
-    echo "<th>correo</th>";
-    echo "<th>contraseña</th>";
+    echo "<th>Id</th>";
+    echo "<th>Titulo</th>";
+    echo "<th>Autor</th>";
+    echo "<th>Editorial</th>";
+    echo "<th>Fecha Publicacion</th>";
+    echo "<th>Genero</th>";
+    echo "<th>Precio</th>";
+    echo "<th>Descripcion</th>";
     echo "</tr>";
     
+/*
 
+Textos completos
+id	
+Titulo	
+Autor	
+Editorial	
+Fecha_publicacion	
+Genero	
+Precio	
+Imagen	
+Descripción*/ 
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
-        echo "<td>" . $row["Id_admin"] . "</td>";
-        echo "<td>" . $row["Id_usuario"] . "</td>";
-        echo "<td>" . $row["Correo"] . "</td>";
-        echo "<td>" . $row["Password"] . "</td>";
+        echo "<td>" . $row["id"] . "</td>";
+        echo "<td>" . $row["Titulo"] . "</td>";
+        echo "<td>" . $row["Autor"] . "</td>";
+        echo "<td>" . $row["Editorial"] . "</td>";
+        echo "<td>" . $row["Fecha_publicacion"] . "</td>";
+        echo "<td>" . $row["Genero"] . "</td>";
+        echo "<td>" . $row["Precio"] . "</td>";
+        echo "<td>" . $row["Descripción"] . "</td>";
         echo "</tr>";
     }
     echo "</table>";

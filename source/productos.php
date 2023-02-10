@@ -58,7 +58,7 @@ while($r=$products->fetch_object()):?>
 	<?php if($found):?>
 		<a href="carrito.php" class="btn btn-info">Agregado</a>
 	<?php else:?>
-	<form class="form-inline" method="post" action="/phpc/addCarrito.php">
+	<form class="form-inline" method="post" action="../source/phpc/addCarrito.php">
 	<input type="hidden" name="product_id" value="<?php echo $r->id; ?>">
 	  <div class="form-group">
 	    <input type="number" name="q" value="1" style="width:100px;" min="1" class="form-control" placeholder="Cantidad">
@@ -74,5 +74,9 @@ while($r=$products->fetch_object()):?>
 		</div>
 	</div>
 </div>
+<?php 
+desconexion($db);
+session_destroy();
+?>
 </body>
 </html>

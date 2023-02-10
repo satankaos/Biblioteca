@@ -43,6 +43,7 @@ echo 'mal';
 
   
 }
+desconexion($db);
 session_destroy()
 //se accede con correo no con nombre 
 ?>

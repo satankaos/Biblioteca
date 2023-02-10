@@ -17,6 +17,6 @@ if(!empty($_SESSION["cart"])){
 	}
 }
 print "<script>window.location='../carrito.php';</script>";
-
+session_destroy();
 ?>
 

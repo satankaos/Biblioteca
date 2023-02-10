@@ -12,4 +12,5 @@ unset($_SESSION["cart"]);
 }
 }
 print "<script>alert('Venta procesada exitosamente');window.location='../productos.php';</script>";
+session_destroy();
 ?>

@@ -9,7 +9,7 @@ include("..\php\conexion.php");
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="/source/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../source/css/bootstrap.min.css">
 </head>
 <body>
 <div class="container">
@@ -44,21 +44,21 @@ $r = $products->fetch_object();
 	?>
 <tr>
 <th><?php echo $c["q"];?></th>
-	<td><?php echo $r->Nombre;?></td>
-	<td>$ <?php echo $r->precio; ?></td>
-	<td>$ <?php echo $c["q"]*$r->price; ?></td>
+	<td><?php echo $r->Titulo;?></td>
+	<td>$ <?php echo $r->Precio; ?></td>
+	<td>$ <?php echo $c["q"]*$r->Precio; ?></td>
 	<td style="width:260px;">
 	<?php
 	$found = false;
 	foreach ($_SESSION["cart"] as $c) { if($c["product_id"]==$r->id){ $found=true; break; }}
 	?>
-		<a href="php/eliminarCarrito.php?id=<?php echo $c["product_id"];?>" class="btn btn-danger">Eliminar</a>
+		<a href="../source/phpc/eliminarCarrito.php?id=<?php echo $c["product_id"];?>" class="btn btn-danger">Eliminar</a>
 	</td>
 </tr>
 <?php endforeach; ?>
 </table>
 
-<form class="form-horizontal" method="post" action="/">
+<form class="form-horizontal" method="post" action="../source/phpc/mensaje.php">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Email del cliente</label>
     <div class="col-sm-5">
@@ -67,11 +67,15 @@ $r = $products->fetch_object();
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-primary">Procesar Venta</button>
+      <button type='submit'  name='login' class="btn btn-primary">Procesar Venta</a>
     </div>
   </div>
 </form>
+<?php
 
+
+
+?>
 
 <?php else:?>
 	<p class="alert alert-warning">El carrito esta vacio.</p>
@@ -80,5 +84,7 @@ $r = $products->fetch_object();
 		</div>
 	</div>
 </div>
+<?php desconexion($db);
+ session_destroy() ?>
 </body>
 </html>

@@ -33,7 +33,7 @@ echo $res;
 
 
 // Si se ha enviado el formulario
-
+desconexion($conn);
 ?>
     </form>
 </body>

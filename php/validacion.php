@@ -34,4 +34,6 @@
         if (isset($_POST['register'])){
             header('Location: formularioRegistro.php');
         }
+        desconexion($db);
+        session_destroy();
     ?>

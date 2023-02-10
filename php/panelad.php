@@ -46,7 +46,9 @@ if (mysqli_num_rows($result) > 0) {
     echo "<tr>";
     echo "<th> <a class=\"btn btn-primary \" href=\"../php/homeAd.php\" aria-current=\"page\">ver usuario</a></th>";
     echo "<th> <a class=\"btn btn-primary \" href=\"../source/carrito.php\" aria-current=\"page\">ver carro</a></th>";
-    echo "<th>correo</th>";
+    echo "<th> <a class=\"btn btn-primary \" href=\"../php/verLibros.php\" aria-current=\"page\">ver libros</a></th>";
+    echo "<th> <a class=\"btn btn-primary \" href=\"../source/carrito.php\" aria-current=\"page\">agregar libos libros</a></th>";
+ 
     echo "<th>contraseña</th>";
     echo "</tr>";
     
@@ -54,6 +56,7 @@ if (mysqli_num_rows($result) > 0) {
    
     echo "</table>";
   }
+  desconexion($db);
     ?>
  
   <!-- Bootstrap JavaScript Libraries -->
