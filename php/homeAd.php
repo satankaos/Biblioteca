@@ -23,6 +23,13 @@
   <main>
 <h1 > Eres admin</h1>
   </main>
+  <form action="eliminarUsuario.php" method="POST" autocomplete="off">
+            <h2 class="text-center">eliminar usuario</h2>
+              <div class="form-group mb-3">
+                  <input type="number" name="id" class="form-control" placeholder="id usuario" required>
+              </div>
+              
+                  <input type="submit" name="button_eliminar" class="form-control btn btn-primary" value="Eliminar">
   <?php
 // Conectar a la base de datos
 require("conexion.php");
