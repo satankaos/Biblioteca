@@ -3,13 +3,14 @@
 * Este archio muestra los productos en una tabla.
 */
 session_start();
-include("..\php\conexion.php");
+include "../php/conexion.php";
+ $conn=conect();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="../source/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 </head>
 <body>
 <div class="container">
@@ -17,23 +18,17 @@ include("..\php\conexion.php");
 		<div class="col-md-12">
 			<h1>Productos</h1>
 			<a href="./carrito.php" class="btn btn-warning">Ver Carrito</a>
-			<a href="./index.php" class="btn btn-warning">Cancelar</a>
+			<a href="./indexC.php" class="btn btn-warning">Cancelar</a>
 			<br><br>
 <?php
 /*
 * Esta es la consula para obtener todos los productos de la base de datos.
 */
-$db=conect();
-$products = $db->query("SELECT * FROM libros");
+$products = $conn->query("SELECT * FROM libros");
 ?>
-<table class="table table-dark table-striped">
+<table class="table table-bordered">
 <thead>
-	
-	<th>Titulo</th>
-	<th>Autor</th>
-	<th>Editorial</th>
-	<th>Fecha_publicacion</th>
-	<th>Genero</th>
+	<th>Producto</th>
 	<th>Precio</th>
 	<th></th>
 </thead>
@@ -44,11 +39,7 @@ $products = $db->query("SELECT * FROM libros");
 while($r=$products->fetch_object()):?>
 <tr>
 	<td><?php echo $r->Titulo;?></td>
-	<td> <?php echo $r->Autor; ?></td>
-	<td> <?php echo $r->Editorial; ?></td>
-	<td> <?php echo $r->Fecha_publicacion; ?></td>
-	<td> <?php echo $r->Genero; ?></td>
-	<td> <?php echo $r->Precio; ?></td>
+	<td>$ <?php echo $r->Precio; ?></td>
 	<td style="width:260px;">
 	<?php
 	$found = false;
@@ -58,7 +49,7 @@ while($r=$products->fetch_object()):?>
 	<?php if($found):?>
 		<a href="carrito.php" class="btn btn-info">Agregado</a>
 	<?php else:?>
-	<form class="form-inline" method="post" action="../source/phpc/addCarrito.php">
+	<form class="form-inline" method="post" action="./phpc/addCarrito.php">
 	<input type="hidden" name="product_id" value="<?php echo $r->id; ?>">
 	  <div class="form-group">
 	    <input type="number" name="q" value="1" style="width:100px;" min="1" class="form-control" placeholder="Cantidad">
@@ -74,9 +65,12 @@ while($r=$products->fetch_object()):?>
 		</div>
 	</div>
 </div>
-<?php 
-desconexion($db);
-session_destroy();
-?>
 </body>
+<?php
+/*
+* Este archio muestra los productos en una tabla.
+*/
+
+desconexion($conn);
+?>
 </html>

@@ -3,13 +3,14 @@
 * Este archio muestra los productos en una tabla.
 */
 session_start();
-include("..\php\conexion.php");
+include "../php/conexion.php";
+ $conn=conect();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="../source/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 </head>
 <body>
 <div class="container">
@@ -22,8 +23,7 @@ include("..\php\conexion.php");
 /*
 * Esta es la consula para obtener todos los productos de la base de datos.
 */
-$db=conect();
-$products = $db->query("SELECT * FROM `carrito`");
+$products = $conn->query("SELECT * FROM libros");
 if(isset($_SESSION["cart"]) && !empty($_SESSION["cart"])):
 ?>
 <table class="table table-bordered">
@@ -39,7 +39,7 @@ if(isset($_SESSION["cart"]) && !empty($_SESSION["cart"])):
 * Apartir de aqui hacemos el recorrido de los productos obtenidos y los reflejamos en una tabla.
 */
 foreach($_SESSION["cart"] as $c):
-$products = $db->query("select * from libros where id = $c[product_id]");
+$products = $conn->query("SELECT * from libros where id=$c[product_id]");
 $r = $products->fetch_object();
 	?>
 <tr>
@@ -52,13 +52,13 @@ $r = $products->fetch_object();
 	$found = false;
 	foreach ($_SESSION["cart"] as $c) { if($c["product_id"]==$r->id){ $found=true; break; }}
 	?>
-		<a href="../source/phpc/eliminarCarrito.php?id=<?php echo $c["product_id"];?>" class="btn btn-danger">Eliminar</a>
+		<a href="phpc/eliminarCarrito.php?id=<?php echo $c["product_id"];?>" class="btn btn-danger">Eliminar</a>
 	</td>
 </tr>
 <?php endforeach; ?>
 </table>
 
-<form class="form-horizontal" method="post" action="../source/phpc/mensaje.php">
+<form class="form-horizontal" method="post" action="./phpc/procesarCarrito.php">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">Email del cliente</label>
     <div class="col-sm-5">
@@ -67,15 +67,11 @@ $r = $products->fetch_object();
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type='submit'  name='login' class="btn btn-primary">Procesar Venta</a>
+      <button type="submit" class="btn btn-primary">Procesar Venta</button>
     </div>
   </div>
 </form>
-<?php
 
-
-
-?>
 
 <?php else:?>
 	<p class="alert alert-warning">El carrito esta vacio.</p>
@@ -84,7 +80,5 @@ $r = $products->fetch_object();
 		</div>
 	</div>
 </div>
-<?php desconexion($db);
- session_destroy() ?>
 </body>
 </html>
