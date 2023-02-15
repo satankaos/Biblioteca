@@ -47,7 +47,7 @@ if (mysqli_num_rows($result) > 0) {
     echo "<th> <a class=\"btn btn-primary \" href=\"../php/homeAd.php\" aria-current=\"page\">ver usuario</a></th>";
     echo "<th> <a class=\"btn btn-primary \" href=\"../php/carros.php\" aria-current=\"page\">ver carro</a></th>";
     echo "<th> <a class=\"btn btn-primary \" href=\"../php/verLibros.php\" aria-current=\"page\">ver libros</a></th>";
-    echo "<th> <a class=\"btn btn-primary \" href=\"\" aria-current=\"page\">agregar libos libros</a></th>";
+    echo "<th> <a class=\"btn btn-primary \" href=\"../php/agregarLibros.php\" aria-current=\"page\">agregar libos libros</a></th>";
  
     echo "<th>contraseña</th>";
     echo "</tr>";

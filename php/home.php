@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>no eres admin <i class="fa fa-window-minimize" aria-hidden="true"></i></h1>
+    <h1> Buscar libros <i class="fa fa-window-minimize" aria-hidden="true"></i></h1>
 </body>
 </html>

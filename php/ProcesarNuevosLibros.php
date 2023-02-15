@@ -4,7 +4,7 @@ include("..\php\conexion.php");
 
 
 $db = conect();
-
+insertarLibro($db,$titulo,$autor,$editorial,$fecha_publicacion,$genero,$precio,$Imagen,$Descripción);
 
 
 

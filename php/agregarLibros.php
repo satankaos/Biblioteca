@@ -14,15 +14,7 @@
 </head>
 
 <body>
-    <!-- 
-Titulo	
-Autor	
-Editorial	
-Fecha_publicacion	
-Genero	
-Precio	
-Imagen	
-Descripción -->
+
 <form action="../php/ProcesarNuevosLibros.php" method="post">
     <p>nombre <input type="text" name="Titulo" required></p>
     <p>Usuario/Correo <input type="text" name="Autor" required></p>
