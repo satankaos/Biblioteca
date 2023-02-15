@@ -45,9 +45,9 @@ if (mysqli_num_rows($result) > 0) {
     echo "<table class= \"table table-dark table-striped\">";
     echo "<tr>";
     echo "<th> <a class=\"btn btn-primary \" href=\"../php/homeAd.php\" aria-current=\"page\">ver usuario</a></th>";
-    echo "<th> <a class=\"btn btn-primary \" href=\"../source/carrito.php\" aria-current=\"page\">ver carro</a></th>";
+    echo "<th> <a class=\"btn btn-primary \" href=\"../php/carros.php\" aria-current=\"page\">ver carro</a></th>";
     echo "<th> <a class=\"btn btn-primary \" href=\"../php/verLibros.php\" aria-current=\"page\">ver libros</a></th>";
-    echo "<th> <a class=\"btn btn-primary \" href=\"../source/carrito.php\" aria-current=\"page\">agregar libos libros</a></th>";
+    echo "<th> <a class=\"btn btn-primary \" href=\"\" aria-current=\"page\">agregar libos libros</a></th>";
  
     echo "<th>contraseña</th>";
     echo "</tr>";

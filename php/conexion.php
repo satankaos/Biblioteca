@@ -65,15 +65,44 @@ if ($stmt->execute()) {
    
     return $txt;
 }
-
- function borrarCarro($id_carrito,$servername, $username, $password, $database){
+// DELETE FROM `carrito_libros` where carrito_libros.cart_id=10;
+ function borrarCarro($id_carrito,$conn){
 
     
 
     if (isset($id_carrito)) {
-        $conn = conexion($servername, $username, $password, $database);
         
-        $borrar = "DELETE FROM carrito WHERE `carrito`.`Id_carrito` = $id_carrito";
+        
+        $borrar = "DELETE FROM carrito WHERE `carrito`.`id`= $id_carrito";
+        $borrar2 =" DELETE FROM `carrito_libros` where carrito_libros.cart_id=$id_carrito";
+        
+        $ejecutar = mysqli_query($conn,$borrar) or die;
+        $ejecutar2 = mysqli_query($conn,$borrar2) or die;
+        if ($ejecutar) {
+            return "<script>alert('Ha sido Borrado')</script>";
+            
+           
+        }
+        if ($ejecutar2) {
+            return "<script>alert('Se han borrado todos los productos')</script>";
+        }
+        
+    }
+
+
+
+
+
+
+ }   
+ function borrarProductosCarro($id_carrito,$conn){
+
+    
+
+    if (isset($id_carrito)) {
+        
+        
+        $borrar = "DELETE FROM carrito WHERE `carrito`.`id`= $id_carrito";
 
         $ejecutar = sqlsrv_query($conn, $borrar);
         if ($ejecutar) {
