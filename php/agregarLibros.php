@@ -15,16 +15,30 @@
 
 <body>
 
-<form action="../php/ProcesarNuevosLibros.php" method="post">
-    <p>nombre <input type="text" name="Titulo" required></p>
-    <p>Usuario/Correo <input type="text" name="Autor" required></p>
-    <p>contraseña <input type="text" name="Editorial" required></p>
-    <p>repetir <input type="date" name="Fecha_publicacion" required></p>
-    <p>repetir <input type="text" name="Genero" required></p>
-    <p>repetir <input type="number" name="Precio" required></p>
-    <p>repetir <input type="text" name="imagen" required></p>
-    
- <button type="submit">enviar</button>  
+ 
+ <form action="../php/ProcesarNuevosLibros.php" method="post">
+
+  <div class="mb-3">
+    <input type="text" name="Titulo" placeholder="Titulo" required>
+  </div>
+    <div class="mb-3">
+    <input type="text" name="Autor" placeholder="Autor"  required>
+    </div>
+    <div class="mb-3">
+    <input type="text" name="Editorial" placeholder="Editorial"  required>
+    </div><div class="mb-3">
+    <p>fecha publicaccion</p><input type="date" name="Fecha_publicacion" placeholder="Fecha Publicacion"  required>
+    </div><div class="mb-3">
+    <input type="text" name="Genero" placeholder="Genero"  required>
+    </div><div class="mb-3">
+    <input type="number" name="Precio" placeholder="Precio"  required>
+    </div><div class="mb-3">
+    <input type="text" name="Descripción" placeholder="Descripción"  required>
+    </div>
+ <button type="submit" class="btn btn-info">enviar</button>    
+ <a class="btn btn-primary " href="panelad.php" aria-current="page">volver</a>
+    </form>
+   
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
     integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>

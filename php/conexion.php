@@ -14,12 +14,12 @@ function conect()
 function desconexion($conn){mysqli_close($conn);}
 function insertarLibro( $conn,$Titulo, $Autor,$Editorial,$Fecha_publicacion, $Genero, $Precio, $Imagen, $Descripción)
 {
-    $stmt = $conn->prepare("INSERT INTO `libros` (`Titulo`, `Autor`, `Editorial`, `Fecha_publicacion`, `Genero`, `Precio`, `Imagen`, `Descripción`) VALUES (,?, ?, ?, ?, ?, ?, ?,?)");
+    $stmt = $conn->prepare("INSERT INTO libros (Titulo, Autor, Editorial, Fecha_publicacion, Genero, Precio, Imagen, Descripción) VALUES (?, ?, ?, ?, ?, ?, ?,?)");
 
 $stmt->bind_param("ssssssss",$Titulo, $Autor,$Editorial,$Fecha_publicacion, $Genero, $Precio, $Imagen, $Descripción);
 if ($stmt->execute()) {
 
-    $txt= "Producto agregado al carrito";
+    $txt= "libro agregado ";
     
     } else {
     

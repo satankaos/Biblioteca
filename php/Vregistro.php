@@ -28,7 +28,12 @@ $res=insertarUsuario($conn, $Nombre, $Correo, $Password);
 /*esta el archivo en xamp
 
 */
-echo $res;
+if (insertarUsuario($conn, $Nombre, $Correo, $Password)) {
+    header('Location:home.php');
+} else {
+    echo 'error al cerear usuario'.$res;
+}
+
 /* gestion inicio*/
 
 

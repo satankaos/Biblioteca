@@ -21,7 +21,7 @@
     <!-- place navbar here -->
   </header>
   <main>
-<h1 > Eres admin</h1>
+<h1 > Panel Administrador</h1>
   </main>
   <?php
 // Conectar a la base de datos
@@ -48,8 +48,6 @@ if (mysqli_num_rows($result) > 0) {
     echo "<th> <a class=\"btn btn-primary \" href=\"../php/carros.php\" aria-current=\"page\">ver carro</a></th>";
     echo "<th> <a class=\"btn btn-primary \" href=\"../php/verLibros.php\" aria-current=\"page\">ver libros</a></th>";
     echo "<th> <a class=\"btn btn-primary \" href=\"../php/agregarLibros.php\" aria-current=\"page\">agregar libos libros</a></th>";
- 
-    echo "<th>contraseña</th>";
     echo "</tr>";
     
 

@@ -54,18 +54,7 @@ if (mysqli_num_rows($result) > 0) {
     echo "<th>Descripcion</th>";
     echo "</tr>";
     
-/*
-
-Textos completos
-id	
-Titulo	
-Autor	
-Editorial	
-Fecha_publicacion	
-Genero	
-Precio	
-Imagen	
-Descripción*/ 
+ 
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
         echo "<td>" . $row["id"] . "</td>";
@@ -80,6 +69,7 @@ Descripción*/
     }
     echo "</table>";
   }
+  echo "<th> <a class=\"btn btn-primary \" href=\"panelad.php\" aria-current=\"page\">volver</a></th>";
   desconexion($db);
     ?>
  
