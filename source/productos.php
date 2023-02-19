@@ -16,7 +16,7 @@ include "../php/conexion.php";
 <div class="container">
 	<div class="row">
 		<div class="col-md-12">
-			<h1>Productos</h1>
+			<h1>Libros</h1>
 			<a href="./carrito.php" class="btn btn-warning">Ver Carrito</a>
 			<a href="./indexC.php" class="btn btn-warning">Cancelar</a>
 			<br><br>
@@ -28,7 +28,7 @@ $products = $conn->query("SELECT * FROM libros");
 ?>
 <table class="table table-bordered">
 <thead>
-	<th>Producto</th>
+	<th>libro</th>
 	<th>Precio</th>
 	<th></th>
 </thead>

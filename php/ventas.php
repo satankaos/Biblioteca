@@ -21,7 +21,7 @@
     <!-- place navbar here -->
   </header>
   <main>
-<h1 > Panel Administrador</h1>
+<h1 > Eres admin</h1>
   </main>
   <?php
 // Conectar a la base de datos
@@ -34,7 +34,7 @@ if (!$conn) {
 }
 
 // Escribir la consulta SQL
-$sql = "SELECT * FROM usuario";
+$sql = "SELECT * FROM carrito";
 
 // Ejecutar la consulta
 $result = mysqli_query($conn, $sql);
@@ -44,17 +44,23 @@ if (mysqli_num_rows($result) > 0) {
     // Mostrar los resultados en una tabla HTML
     echo "<table class= \"table table-dark table-striped\">";
     echo "<tr>";
-    echo "<th> <a class=\"btn btn-primary \" href=\"../php/homeAd.php\" aria-current=\"page\">Ver usuario</a></th>";
-    echo "<th> <a class=\"btn btn-primary \" href=\"../php/carros.php\" aria-current=\"page\">Ver carro</a></th>";
-    echo "<th> <a class=\"btn btn-primary \" href=\"../php/verLibros.php\" aria-current=\"page\">Ver libros</a></th>";
-    echo "<th> <a class=\"btn btn-primary \" href=\"../php/agregarLibros.php\" aria-current=\"page\">Agregar libros</a></th>";
-    echo "<th> <a class=\"btn btn-primary \" href=\"../php/ventas.php\" aria-current=\"page\">ver ventas</a></th>";
+    echo "<th>Id</th>";
+    echo "<th>usuario</th>";
+    echo "<th>fecha venta</th>";
+    
     echo "</tr>";
     
-
-   
+ 
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<tr>";
+        echo "<td>" . $row["id"] . "</td>";
+        echo "<td>" . $row["client_email"] . "</td>";
+        echo "<td>" . $row["created_at"] . "</td>";
+        echo "</tr>";
+    }
     echo "</table>";
   }
+  echo "<th> <a class=\"btn btn-primary \" href=\"panelad.php\" aria-current=\"page\">volver</a></th>";
   desconexion($db);
     ?>
  

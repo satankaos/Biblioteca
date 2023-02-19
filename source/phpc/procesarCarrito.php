@@ -13,7 +13,7 @@ $q1 = $conn->query("INSERT INTO carrito_libros (product_id,q,cart_id) VALUES ($c
 unset($_SESSION["cart"]);
 }
 }
-print "<script>alert('Venta procesada exitosamente');window.location='../productos.php';</script>";
+print "<script>alert('Venta procesada exitosamente, id compra $cart_id'    );window.location='../productos.php';</script>";
 desconexion($conn);
 session_destroy();
 ?>

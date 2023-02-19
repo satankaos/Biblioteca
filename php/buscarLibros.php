@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Title</title>
+  <title>buscar libro</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,8 +18,24 @@
     <!-- place navbar here -->
   </header>
   <main>
-  <a class="btn btn-primary " href="../source/productos.php" aria-current="page">Libros</a>
-  <a class="btn btn-primary " href="buscarLibros.php" aria-current="page">buscar Libros</a>
+  <form action="procesarBusqueda.php" method="post">
+    <p>Titulo <input type="text" name="Titulo" required></p>
+    <p>editorial <input type="text" name="Editorial" required></p>
+    <p>Autor <input type="text" name="Autor" required></p>
+    <p>Genero <input type="text" name="Genero" required></p>
+    
+        <label>Metodo de busqueda</label>
+        <select name="select">
+            <option value="0">todos</option>
+            <option value="1">Titulo</option>
+            <option value="2">Autor</option>
+            <option value="3">editorial</option>
+            <option value="4">Genero</option>
+        </select>
+    
+ <button type="submit">enviar</button>    
+    </form>
+
   </main>
   <footer>
     <!-- place footer here -->
