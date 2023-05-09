@@ -1,0 +1,19 @@
+body {
+    position: relative;
+    background-image: url(../../php/img/487483.jpg);
+    background-size: 100% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+
+  .image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-50%, 0%);
+  }
+  .sForm{
+    border: 1px solid black;
+  }
+  .move{position: relative;
+right: 50%;}

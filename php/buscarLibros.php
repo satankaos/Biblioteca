@@ -7,9 +7,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <!-- Bootstrap CSS v5.2.1 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 
 </head>
 
@@ -19,10 +18,10 @@
   </header>
   <main>
   <form action="procesarBusqueda.php" method="post">
-    <p>Titulo <input type="text" name="Titulo" required></p>
-    <p>editorial <input type="text" name="Editorial" required></p>
-    <p>Autor <input type="text" name="Autor" required></p>
-    <p>Genero <input type="text" name="Genero" required></p>
+    <p>Titulo <input type="text" name="Titulo" ></p>
+    <p>editorial <input type="text" name="Editorial" ></p>
+    <p>Autor <input type="text" name="Autor" ></p>
+    <p>Genero <input type="text" name="Genero" ></p>
     
         <label>Metodo de busqueda</label>
         <select name="select">

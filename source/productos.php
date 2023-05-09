@@ -10,7 +10,8 @@ include "../php/conexion.php";
 <html>
 <head>
 	<title></title>
-	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
 </head>
 <body>
 <div class="container">
@@ -18,7 +19,7 @@ include "../php/conexion.php";
 		<div class="col-md-12">
 			<h1>Libros</h1>
 			<a href="./carrito.php" class="btn btn-warning">Ver Carrito</a>
-			<a href="./indexC.php" class="btn btn-warning">Cancelar</a>
+			<a href="./../php/home.php" class="btn btn-warning">Atras</a>
 			<br><br>
 <?php
 /*

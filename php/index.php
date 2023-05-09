@@ -19,8 +19,8 @@
     <!-- place navbar here -->
   </header>
   <main>
-  <a class="btn btn-primary " href="../source/productos.php" aria-current="page">Libros</a>
-  <a class="btn btn-primary " href="buscarLibros.php" aria-current="page">buscar Libros</a>
+  <a class="btn btn-primary " href="../php/formularioRegistro.php" aria-current="page">Registro</a>
+  <a class="btn btn-primary " href="../php/loging.php" aria-current="page">ingresar</a>
   </main>
   <footer>
     <!-- place footer here -->
