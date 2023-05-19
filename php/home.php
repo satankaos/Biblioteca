@@ -18,6 +18,25 @@
   <header>
     <!-- place navbar here -->
   </header>
+  <img class="image" src="../php/img/logo.png" alt="" width="200px" height="200px">
+  <div>
+  <div class="d-flex justify-content-center align-items-center vh-100">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./img/1.jpg" class="d-block w-20 h-20" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="./img/3.jpg" class="d-block w-20 h-20" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="./img/4.jpg" class="d-block w-20 h-20" alt="...">
+    </div>
+  </div>
+</div>
+
+</div>
+
   <main>
   <a class="btn btn-primary " href="../source/productos.php" aria-current="page">Libros</a>
   <a class="btn btn-primary " href="buscarLibros.php" aria-current="page">buscar Libros</a>
